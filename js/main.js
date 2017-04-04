@@ -5,54 +5,49 @@ function validateForm(){
  var email = document.getElementById("input-email");
  var password = document.getElementById("input-password");
  var indice = document.getElementById("opcion");
+ var namError=document.getElementById("name-error");
+ var lastnamError=document.getElementById("lastname-error");
+ var emailError=document.getElementById("email-error");
+ var passwordError=document.getElementById("password-error");
+ var selectError=document.getElementById("select-error");
 //validar los 4 campos
 
     if(nombre.value==""){
-      alert("El Nombre es obligatorio");
+      namError.appendChild(document.createTextNode("El Nombre es obligatorio"));
       nombre.focus();
-      return false;
     }else if (apellido.value=="") {
-      alert("El Apellido es obligatorio");
+    lastnamError.appendChild(document.createTextNode("El Apellido es obligatorio"));
       apellido.focus();
-      return false;
     }else if(email.value==""){
-      alert("El email es obligatorio");
+      emailError.appendChild(document.createTextNode("El email es obligatorio"));
       email.focus();
-      return false;
    }else if(password.value==""){
-     alert("La contraseña es obligatoria");
+     passwordError.appendChild(document.createTextNode("La contraseña es obligatoria"));
      password.focus();
-     return false;
    }else if(indice.value==0){
-      alert("Seleccione un tipo de bicicleta");
-      return false;
+     selectError.appendChild(document.createTextNode("Seleccione un tipo de bicicleta"));
    }
  var patron=/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
      if(!patron.test(nombre.value)){ //validar nombre
-       alert("Escriba la primera letra de su nombre con Mayúscula");
+       namError.appendChild(document.createTextNode("Escriba la primera letra de su nombre con Mayúscula"));
        nombre.focus();
-       return false;
      }
      if(!patron.test(apellido.value)){//validar apellido
-       alert("Escriba la primera letra de su apellido con Mayúscula");
+       lastnamError.appendChild(document.createTextNode("Escriba la primera letra de su apellido con Mayúscula"));
        apellido.focus();
-       return false;
      }
  var patron2=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
      if(!patron2.test(email.value)){//validar correo
-       alert("Ingrese un correo válido\nEjemplo : yo@ejemplo.com");
+         emailError.appendChild(document.createTextNode("Ingrese un correo válido\nEjemplo : yo@ejemplo.com"));
        email.focus();
-       return false;
      }
          //validar password
      if(password.value.length<6){
-       alert("Su contraseña debe tener al menos 6 caracteres");
+       passwordError.appendChild(document.createTextNode("Su contraseña debe tener al menos 6 caracteres"));
        password.focus();
-       return false;
      }else if (password.value=="password"||password.value=="123456"|| password.value=="098754") {
-       alert("Su contraseña no puede ser " + password.value);
+       passwordError.appendChild(document.createTextNode("Su contraseña no puede ser " + password.value));
        password.focus();
-       return false;
      }
 }
