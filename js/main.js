@@ -75,7 +75,7 @@ function validacion(mensaje,i){
        tooltipNombre= validacion("Escriba la primera letra de su nombre con Mayúscula",6);
        divContenedor[0].appendChild(tooltipNombre);
       }
-    }else if (patron.test(nombre.value) && nombre.value="") {
+    }else {
          var span=document.getElementById("span6");
          if(span!=null){
          divContenedor[0].removeChild(span);
@@ -86,7 +86,7 @@ function validacion(mensaje,i){
        tooltipApellido=validacion("Escriba la primera letra de su apellido con Mayúscula",7);
        divContenedor[1].appendChild(tooltipApellido);
       }
-    }else if (patron.test(apellido.value) && apellido.value!="") {
+    }else{
          var span=document.getElementById("span7");
          if(span!=null){
          divContenedor[1].removeChild(span);
@@ -99,7 +99,7 @@ function validacion(mensaje,i){
          tooltipEmail=validacion("Ingrese un correo válido\nEjemplo : yo@ejemplo.com",8);
          divContenedor[2].appendChild(tooltipEmail);
        }
-     }else if (patron2.test(email.value) && email.value!="") {
+     }else {
          var span=document.getElementById("span8");
          if(span!=null){
          divContenedor[2].removeChild(span);
