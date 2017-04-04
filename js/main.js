@@ -63,7 +63,7 @@ function validacion(mensaje,i){
      var tooltipSelect=validacion("Seleccione un tipo de bicicleta",5);
      divContenedor[4].appendChild(tooltipSelect);
     }
-   }else if (apellido.value!=0) {
+  }else if (indice.value!=0) {
        var span=document.getElementById("span5");
        if(span!=null){
        divContenedor[4].removeChild(span);
@@ -75,7 +75,7 @@ function validacion(mensaje,i){
        tooltipNombre= validacion("Escriba la primera letra de su nombre con Mayúscula",6);
        divContenedor[0].appendChild(tooltipNombre);
       }
-     }else if (apellido.value!="") {
+    }else if (patron.test(nombre.value) && nombre.value="") {
          var span=document.getElementById("span6");
          if(span!=null){
          divContenedor[0].removeChild(span);
@@ -86,7 +86,7 @@ function validacion(mensaje,i){
        tooltipApellido=validacion("Escriba la primera letra de su apellido con Mayúscula",7);
        divContenedor[1].appendChild(tooltipApellido);
       }
-     }else if (apellido.value!="") {
+    }else if (patron.test(apellido.value) && apellido.value!="") {
          var span=document.getElementById("span7");
          if(span!=null){
          divContenedor[1].removeChild(span);
@@ -99,7 +99,7 @@ function validacion(mensaje,i){
          tooltipEmail=validacion("Ingrese un correo válido\nEjemplo : yo@ejemplo.com",8);
          divContenedor[2].appendChild(tooltipEmail);
        }
-     }else if (apellido.value!="") {
+     }else if (patron2.test(email.value) && email.value!="") {
          var span=document.getElementById("span8");
          if(span!=null){
          divContenedor[2].removeChild(span);
