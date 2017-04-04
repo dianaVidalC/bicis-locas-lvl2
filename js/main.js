@@ -75,7 +75,7 @@ function validacion(mensaje,i){
        tooltipNombre= validacion("Escriba la primera letra de su nombre con Mayúscula",6);
        divContenedor[0].appendChild(tooltipNombre);
       }
-    }else if (patron.test(nombre.value) && nombre.value="") {
+    }else{
          var span=document.getElementById("span6");
          if(span!=null){
          divContenedor[0].removeChild(span);
@@ -99,7 +99,7 @@ function validacion(mensaje,i){
          tooltipEmail=validacion("Ingrese un correo válido\nEjemplo : yo@ejemplo.com",8);
          divContenedor[2].appendChild(tooltipEmail);
        }
-     }else if (patron2.test(email.value) && email.value!="") {
+     }else{
          var span=document.getElementById("span8");
          if(span!=null){
          divContenedor[2].removeChild(span);
